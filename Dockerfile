@@ -6,4 +6,6 @@ RUN curl https://download.elasticsearch.org/kibana/kibana/kibana-${KIBANA_VERSIO
 
 ADD ./run.sh /run.sh
 
+EXPOSE 5601
+
 ENTRYPOINT /run.sh
