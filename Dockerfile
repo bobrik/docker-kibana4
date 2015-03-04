@@ -1,6 +1,6 @@
 FROM gliderlabs/alpine:3.1
 
-ENV KIBANA_VERSION 4.0.0-linux-x64
+ENV KIBANA_VERSION 4.0.1-linux-x64
 
 RUN apk-install curl && \
     mkdir /opt && \
