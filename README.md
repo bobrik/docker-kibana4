@@ -1,6 +1,7 @@
 # kibana 4 in docker
 
-This is dockerized version of [kibana 4](https://github.com/elasticsearch/kibana).
+This is dockerized version of [kibana 4](https://github.com/elasticsearch/kibana)
+in a small 60mb container image.
 
 ## Running
 
