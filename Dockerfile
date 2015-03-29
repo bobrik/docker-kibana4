@@ -5,6 +5,7 @@ ENV KIBANA_VERSION 4.0.1-linux-x64
 RUN apk --update add curl && \
     mkdir /opt && \
     curl -s https://download.elasticsearch.org/kibana/kibana/kibana-${KIBANA_VERSION}.tar.gz | tar zx -C /opt && \
+    apk add lua-curl && \
     apk add nodejs && \
     npm install -g htpasswd && \
     rm -rf /opt/kibana-${KIBANA_VERSION}/node && \
