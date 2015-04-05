@@ -4,7 +4,7 @@ set -e
 
 LOGSENE_TOKEN=${LOGSENE_TOKEN}
 KIBANA_INDEX=${LOGSENE_TOKEN}_kibana 
-KIBANA_ES_URL=https://logsene-receiver.sematext.com:443
+KIBANA_ES_URL="https://logsene-receiver.sematext.com:443"
 
 curl -XPOST ${KIBANA_ES_URL}/${KIBANA_INDEX}
 
