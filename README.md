@@ -4,9 +4,10 @@
 
 This image is deprecated in favor of `bobrik/kibana`: https://github.com/bobrik/docker-kibana
 
-Note that this version cotained a bug that resulted in using `kibana-int`
-index instead of `.kibana` by default. After upgrade to `bobrik/kibana`
-you would need to reindex data than was indexed by this version.
+Note that this version contained a bug that resulted in using `kibana-int`
+index instead of `.kibana` by default. After upgrading from `bobrik/kibana4`
+to `bobrik/kibana` you would need to reindex data than was indexed
+by `bobrik/kibana4`.
 
 Here's how to do that:
 
