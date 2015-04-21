@@ -1,10 +1,25 @@
 # kibana 4 in docker
 
-This is dockerized version of [kibana 4](https://github.com/elasticsearch/kibana)
-in a small 60mb container image.
+## Deprecation notice
 
-## Running
+This image is deprecated in favor of `bobrik/kibana`: https://github.com/bobrik/docker-kibana
+
+Note that this version cotained a bug that resulted in using `kibana-int`
+index instead of `.kibana` by default. After upgrade to `bobrik/kibana`
+you would need to reindex data than was indexed by this version.
+
+Here's how to do that:
+
+1. Upgrade your kibana to `bobrik/kibana`.
+2. Recreate index patterns in upgraded version.
+3. Reindex visualizations, dashboards and searches:
 
 ```
-docker run -d -p <host ip>:<host port>:5601 -e KIBANA_ES_URL=<elasticsearch url>  bobrik/kibana4
+docker run --rm -it bobrik/esreindexer \
+    -src http://es:9200/kibana-int -dst http://es:9200/.kibana \
+    -query '{"filtered":{"filter":{"exists":{"field":"kibanaSavedObjectMeta"}}}}'
 ```
+
+Replace `http://es:9200` with your elasticsearch address.
+
+Sorry for inconvenience.
